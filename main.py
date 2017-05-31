@@ -49,7 +49,7 @@ def set_message_coords(): # Creates coords for message box and screenshots name
 
 def player_id(name_coords, option): # Indentifies person who messaged and depending on if this person has messaged before changes response
 	image = pyautogui.screenshot('name_test.png', region = name_coords) # Names are screenshots 
-	name_image = str(pytesseract.image_to_string(Image.open('name_test.png')))
+	name_image = str(pytesseract.image_to_string(Image.open('name_test.png'), lang = 'eng'))
 	print('Players name is {}'.format(name_image))
 
 	if name_image in players:
@@ -86,22 +86,22 @@ def read_message(text_coords): # Reads PM for numbers and sets option the number
 	elif pyautogui.locateCenterOnScreen('2.png',region = text_coords,  confidence = .9, grayscale = True):
 		option = '2'
 		print('Player messaged 2')
-	elif pyautogui.locateCenterOnScreen('3.png',region = text_coords,  confidence = .8, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('3.png',region = text_coords,  confidence = .9, grayscale = True):
 		option = '3'
 		print('Player messaged 3')
 	elif pyautogui.locateCenterOnScreen('4.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '4'
 		print('Player messaged 4l')
-	elif pyautogui.locateCenterOnScreen('5.png',region = text_coords,  confidence = .8, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('5.png',region = text_coords,  confidence = .9, grayscale = True):
 		option = '5'
 		print('Player messaged 5')
-	elif pyautogui.locateCenterOnScreen('6.png',region = text_coords,  confidence = .9, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('6.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '6'
 		print('Player messaged 6')
 	elif pyautogui.locateCenterOnScreen('7.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '7'
 		print('Player messaged 7')
-	elif pyautogui.locateCenterOnScreen('8.png',region = text_coords,  confidence = .9, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('8.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '8'
 		print('Player messaged 8')
 	elif pyautogui.locateCenterOnScreen('9.png',region = text_coords,  confidence = .9, grayscale = True):
@@ -128,7 +128,7 @@ def response(placement): # All the possible responses the bot can give a player
 	elif placement == '11':
 		return 'Section under construction please check back later. PM "Metal" to suggest things [PM 0 to reset bot]'
 	elif placement == '12':
-		return '1. The bounty box will "drop"(stop following you, and will not pick up anything) after every kill/capture you get, and will require you to call it, or run over it to pick it up again. [PM 1 for more info, PM 0 to reset choices]'
+		return '1. The bounty box will "drop"(stop following you, and will not pick up anything) after every kill/capture you get, and will require you to call it, or run over it to pick it up again. [PM 0 to reset choices]'
 	elif placement == '13':
 		return '100 green blobs, 20 Lizardons, 75 Pyrats, 75 Rebel soldiers(regular green baddy), 60 dark blobs, 60 rats, 75 snakes, 75 bats, 75 bandits, 80 spiders, 50 archers, or 50 crabs. [PM 0 to reset bot]'
 
