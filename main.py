@@ -8,7 +8,6 @@ import pytesseract
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract' #Needs to be here for tesseract to work for whatever reason
 players = {} # Used to store players names and where in the response is
-previous_message = None # Used in player_id() to 
 
 def main(): # Lets all the magic happen
 	while True:
@@ -40,7 +39,6 @@ def set_message_coords(): # Creates coords for message box and screenshots name
 		exit()
 	name_coords = (imagex - 390), imagey, 378, 50 # The coords of where the players name would be
 	print('Found an open message, will now create coords')
-	#print(imagex, imagey)
 
 	reply_coords = (imagex - 251), (imagey + 255 ) # Coords of the reply button
 	text_coords = (imagex - 461), (imagey + 45), 430, 45 # Coords of where a players possible response is
@@ -113,8 +111,6 @@ def read_message(text_coords): # Reads PM for numbers and sets option the number
 	else:
 		print('Did not find digit answer. Will give default response.')
 		option = None
-		#reply(reply_coords,'ERROR PLEASE ENTER A NUMBER RESPONSE!')
-		#main()
 	print(option)
 	return option
 
