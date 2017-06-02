@@ -27,7 +27,7 @@ def find_notification(): #looks for a waiting PM and clicks it
 		if image is not None:
 			print('Found a waiting message')
 			pyautogui.click(image)
-			time.sleep(.2)
+			time.sleep(.1)
 			break
 
 
@@ -121,7 +121,7 @@ def read_message(text_coords): # Reads PM for numbers and sets option the number
 
 def response(placement): # All the possible responses the bot can give a player
 	if placement == None:
-		return "Hello! I am a bot made to answer your questions! PM the number for more options! 1: Bounties. 2: Bug Hunting. 3: Looting. 4: Farming. 5: Finding Items."
+		return "Hello! I am a bot made to answer your questions! PM the number for more options! 1: Bounties. 2: Bug Hunting. 3: Looting. 4: Farming. 5: Finding Items. 6: About Me."
 
 	elif placement == '1':
 		return "The bounty quest allows you to hunt mobs for cash! Location: Castle, steward's room(to the right in the throne room) [PM 1 for specifics, PM 2 for TIPS, PM 3 for possible bounties]"
@@ -184,9 +184,14 @@ def response(placement): # All the possible responses the bot can give a player
 		return 'House farming is a good way to have "back up" money, though most just use it for decoration. I would recommend getting a 2-p mount for this, as it has more blasts per bomb then your average horse.[PM 0 to reset bot]'
 
 	elif placement == '5':
-		return '[PM 1 for info getting the bug net]'
+		return '[PM 1 for info getting the bug net, PM 2 for flippers]'
 	elif placement == '51':
 		return 'Open the map and head up to MoD town. When you make it, head down. You will see a tree on your right, go to inside. Talk to Adam(the NPC) inside and receive the bug net. [PM 0 to reset bot]'
+	elif placement == '52':
+		return "Section under construction, check back later."
+
+	elif placement == '6':
+		return 'I was created by "Metal", written in Python and my source code can be found by searching Github for GraalOnline-ChatBot. PM my creator to suggest things or if you just want to learn more about how I work. [PM 0 to reset bot]'
 
 	else:
 		return "Error! Valid invalid input. PM 0 to reset bot."
