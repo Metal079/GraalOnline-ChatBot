@@ -6,7 +6,7 @@ except ImportError:
     from PIL import Image
 import pytesseract
 
-pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract' #Needs to be here for tesseract to work for whatever reason
+pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract' # Path to tesseract needs to be here for tesseract to work for whatever reason
 players = {} # Used to store players names and where in the response is
 
 def main(): # Lets all the magic happen
@@ -117,7 +117,7 @@ def read_message(text_coords): # Reads PM for numbers and sets option the number
 
 def response(placement): # All the possible responses the bot can give a player
 	if placement == None:
-		return "Hello! I am a bot made to answer your questions! PM the number for more options! 1: Bounties. 2: Bug Hunting. 3: Looting. 4: Farming. 5: Finding Items. 6: About Me."
+		return "Hello! I am a bot made to answer your questions! PM the number for more options! 1: Bounties. 2: Bug Hunting. 3: Looting. 4: Farming. 5: Obtaining Items. 6: Treasure Maps. 7: About Me."
 
 	elif placement == '1':
 		return "The bounty quest allows you to hunt mobs for cash! Location: Castle, steward's room(to the right in the throne room) [PM 1 for specifics, PM 2 for TIPS, PM 3 for possible bounties]"
@@ -184,9 +184,29 @@ def response(placement): # All the possible responses the bot can give a player
 	elif placement == '51':
 		return 'Open the map and head up to MoD town. When you make it, head down. You will see a tree on your right, go to inside. Talk to Adam(the NPC) inside and receive the bug net. [PM 0 to reset bot]'
 	elif placement == '52':
-		return "Section under construction, check back later."
+		return "Before starting this quest, you must have already given the Fishing Line to Toll Guy. First, go to Toll Guy at the south end of the bridge under Graal City. [PM 1 to continue, 0 to reset bot]"
+	elif placement == '521':
+		return "He is thankful for the fishing line and wants to repay you by selling you the next fish he catches for 500 gralats. Pay him and stand there awhile. It just so happens that the next fish he catches is a very rare fish.[PM 1 to continue, 0 to reset bot]"
+	elif placement == '5211':
+		return "Go to York Town, then get into the sea. On your draisine, take the rail going north towards Snow Town. The draisine isn't really required for this since we are not going all the way to Snow Town. [PM 1 to continue, 0 to reset bot]"
+	elif placement == '52111':
+		return "In the first part of this rail cave, there is still a lot of water from the sea. Swim up the northwest corner of the cave and you will see a waterfall. Swim through the waterfall and you will enter a room.  [PM 1 to continue, 0 to reset bot]"
+	elif placement == '521111':
+		return "You will first notice the strange shadow swimming in circles around you. The chest on the ledge is locked. Equip the very rare fish received from the fisherman and hold it up in the center of the room. [PM 1 to continue, 0 to reset bot]"
+	elif placement == '5211111':
+		return "The shadow will reveal itself to be a Zorbi. Give him your fish and he will eat it right away. The Zorbi will you a Rusty Key. So go up and unlock the chest and you will find the Flippers. [PM 0 to reset bot]"
+
 
 	elif placement == '6':
+		return 'Treasure Maps can be obtained as rare loot, killing Bandits/Pyrats. Once found, you need to get it deciphered by the guy in the house which is second to the right as you first enter Destiny. [PM 1 to continue, 2 for loot, 0 to reset bot]'
+	elif placement == '61':
+		return "Once you're at the location shown on map, you need to dig the chest up with a shovel. It is possible to win treasure maps playing Crab Chance, too. [PM 1 to continue, 0 to reset bot]"
+	elif placement == '611':
+		return "It costs 25 gralats to get the guy to read another map after your first one is done for free. After this, the price will continue to stack (25, 50, 100 etc). This resets every 24hr when scoreboards resets. [PM 0 to reset bot]"
+	elif placement == '62':
+		return "You'll get one of the following: a miner's hat, traveler's hat, mushroom hat, a gold Gralat, a rare loot item, a pet rock, a mushroom pet, some treasure chest furniture, a treasure chest hat, a morph, a rock juggle, a gem skull juggle. [PM 0 to reset bot]"
+
+	elif placement == '7':
 		return 'I was created by "Metal", written in Python and my source code can be found by searching Github for GraalOnline-ChatBot. PM my creator to suggest things or if you just want to learn more about how I work. [PM 0 to reset bot]'
 
 	else:
