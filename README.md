@@ -14,7 +14,7 @@ Modules required: Pyautogui, pillow(Included when you install Pyautogui from pip
 
 # To do
 
-*Add much more dialoge options
+*Add much more dialogue options
 
 *Add number 9 as a way to go back one level.
 
