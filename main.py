@@ -28,6 +28,15 @@ def find_notification(): #looks for a waiting PM and clicks it
 			pyautogui.click(image)
 			time.sleep(.1)
 			break
+		find_reconnect()
+
+
+def find_reconnect(): #looks for a recconect button and clicks it
+	image = pyautogui.locateCenterOnScreen('reconnect.png', grayscale = True, confidence = .9)
+	print(image)
+	if image is not None:
+		print('Found a reconnect message')
+		pyautogui.click(image)
 
 
 def set_message_coords(): # Creates coords for message box and screenshots name
@@ -81,7 +90,7 @@ def read_message(text_coords): # Reads PM for numbers and sets option the number
 	if pyautogui.locateCenterOnScreen('1.png',region = text_coords,  confidence = .9, grayscale = True):
 		option = '1'
 		print('Player messaged 1')
-	elif pyautogui.locateCenterOnScreen('2.png',region = text_coords,  confidence = .9, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('2.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '2'
 		print('Player messaged 2')
 	elif pyautogui.locateCenterOnScreen('3.png',region = text_coords,  confidence = .9, grayscale = True):
@@ -90,22 +99,22 @@ def read_message(text_coords): # Reads PM for numbers and sets option the number
 	elif pyautogui.locateCenterOnScreen('4.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '4'
 		print('Player messaged 4l')
-	elif pyautogui.locateCenterOnScreen('5.png',region = text_coords,  confidence = .9, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('5.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '5'
 		print('Player messaged 5')
-	elif pyautogui.locateCenterOnScreen('6.png',region = text_coords,  confidence = .8, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('6.png',region = text_coords,  confidence = .7, grayscale = True):
 		option = '6'
 		print('Player messaged 6')
 	elif pyautogui.locateCenterOnScreen('7.png',region = text_coords,  confidence = .8, grayscale = True):
 		option = '7'
 		print('Player messaged 7')
-	elif pyautogui.locateCenterOnScreen('8.png',region = text_coords,  confidence = .8, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('8.png',region = text_coords,  confidence = .7, grayscale = True):
 		option = '8'
 		print('Player messaged 8')
 	elif pyautogui.locateCenterOnScreen('9.png',region = text_coords,  confidence = .9, grayscale = True):
 		option = '9'
 		print('Player messaged 9')
-	elif pyautogui.locateCenterOnScreen('0.png',region = text_coords,  confidence = .8, grayscale = True):
+	elif pyautogui.locateCenterOnScreen('0.png',region = text_coords,  confidence = .7, grayscale = True):
 		option = '0'
 		print('Player messaged 0')
 	else:
