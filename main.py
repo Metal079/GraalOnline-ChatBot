@@ -1,6 +1,5 @@
 import time
 import pyautogui
-
 try:
 	import Image
 except ImportError:
@@ -38,6 +37,7 @@ def find_reconnect():  # looks for a recconect button and clicks it
 	if image is not None:
 		print('Found a reconnect message')
 		pyautogui.click(image)
+		print("------------------------------------")
 
 
 def set_message_coords():  # Creates coords for message box and screenshots name
@@ -55,7 +55,10 @@ def set_message_coords():  # Creates coords for message box and screenshots name
 
 
 def player_id(name_coords, option):  # Indentifies person who messaged and depending on if this person has messaged before changes response
-	image = pyautogui.screenshot('name_test.png', region=name_coords)  # Names are screenshots
+	try:
+		image = pyautogui.screenshot('name_test.png', region=name_coords)  # Names are screenshots
+	except:
+		return "Invalid Name"
 	name_image = str(pytesseract.image_to_string(image))
 	print('Players name is {}'.format(name_image))
 
@@ -125,7 +128,10 @@ def read_message(text_coords):  # Reads PM for numbers and sets option the numbe
 
 
 def response(placement):  # All the possible responses the bot can give a player
-	if placement is None:
+	if placement == "Invalid Name":
+		return "Hello! It seems I am unable to decipher your name! Sorry but I cannot help you unless you change your name."
+
+	elif placement is None:
 		return "Hello! I am a bot made to answer your questions! PM the number for more options! 1: Bounties. 2: Bug Hunting. 3: Looting. 4: Farming. 5: Obtaining Items. 6: Treasure Maps. 7: About Me."
 
 	elif placement == '1':
