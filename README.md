@@ -18,6 +18,6 @@ Modules required: Pyautogui, pillow(Included when you install Pyautogui from pip
 
 *Add number 9 as a way to go back one level.
 
-*Reorginize responses into a seperate file to prevent things from getting too confusing in the future.
+*Reorganize responses into a seperate file to prevent things from getting too confusing in the future.
 
-*Find a way for the bot to handle strange IGNs (ex. mệtẩḽ).
+*~Find a way for the bot to handle strange IGNs (ex. mệtẩḽ).~ DONE
