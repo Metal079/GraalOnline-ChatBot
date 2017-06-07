@@ -41,7 +41,7 @@ def find_reconnect():  # looks for a recconect button and clicks it
 
 
 def set_message_coords():  # Creates coords for message box and screenshots name
-	try:
+	while True:
 		imagex, imagey = pyautogui.locateCenterOnScreen('upper_right_message_corner.png', grayscale=True, confidence=.8)
 		print('Found an open message, will now create coords')
 		name_coords = (imagex - 390), imagey, 378, 50  # The coords of where the players name would be
@@ -49,15 +49,11 @@ def set_message_coords():  # Creates coords for message box and screenshots name
 		text_coords = (imagex - 461), (imagey + 45), 430, 45  # Coords of where a players possible response is
 		return name_coords, reply_coords, text_coords  # Returns all coord values to be used by other functions
 
-	except:
-		print('ERROR I SHOULD BE FINDING "upper_right_message_corner.PNG" EXITING PROGRAM')
-		exit()
-
 
 def player_id(name_coords, option):  # Indentifies person who messaged and depending on if this person has messaged before changes response
 	try:
 		image = pyautogui.screenshot('name_test.png', region=name_coords)  # Names are screenshots
-	except:
+	except: # Some names break the bot, therefor we need to check for them
 		return "Invalid Name"
 	name_image = str(pytesseract.image_to_string(image))
 	print('Players name is {}'.format(name_image))
